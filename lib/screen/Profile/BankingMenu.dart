@@ -1,19 +1,21 @@
+import 'package:bankingapp/screen/Auth/BankingSignIn.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:nb_utils/nb_utils.dart';
 
-import '../const/BankingColors.dart';
-import '../const/BankingContants.dart';
-import '../const/BankingImages.dart';
-import '../const/BankingStrings.dart';
-import '../utils/BankingWidget.dart';
+import '../../const/BankingColors.dart';
+import '../../const/BankingContants.dart';
+import '../../const/BankingImages.dart';
+import '../../const/BankingStrings.dart';
+import '../../utils/BankingWidget.dart';
 import 'BankingChangePasword.dart';
 import 'BankingContact.dart';
-import 'BankingLocation.dart';
+import '../BankingLocation.dart';
 import 'BankingNews.dart';
 import 'BankingQuestionAnswer.dart';
-import 'BankingRateInfo.dart';
-import 'BankingShareInformation.dart';
-import 'BankingTermsCondition.dart';
+import '../BankingRateInfo.dart';
+import '../BankingShareInformation.dart';
+import '../BankingTermsCondition.dart';
 
 
 class BankingMenu extends StatefulWidget {
@@ -209,7 +211,7 @@ dialogContent(BuildContext context) {
             Container(width: 1.0, height: 40, color: Banking_greyColor).center(),
             Text("Logout", style: primaryTextStyle(size: 18, color: Banking_Primary)).onTap(
               () {
-                finish(context);
+                BankingSignIn().launch(context);
               },
             ).paddingLeft(16)
           ],

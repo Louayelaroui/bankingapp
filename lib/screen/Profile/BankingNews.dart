@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:nb_utils/nb_utils.dart';
 
-import '../model/BankingModel.dart';
-import '../const/BankingColors.dart';
-import '../utils/BankingDataGenerator.dart';
-import '../const/BankingStrings.dart';
+import '../../model/BankingModel.dart';
+import '../../const/BankingColors.dart';
+import '../../utils/BankingDataGenerator.dart';
+import '../../const/BankingStrings.dart';
 
 
 class BankingNews extends StatefulWidget {
@@ -66,7 +66,7 @@ class _BankingNewsState extends State<BankingNews> {
                   child: Column(
                     children: <Widget>[
                       Text(
-                        'Cy Captial bank give a giftbox for new customers\nwho create account',
+                        'el BARAKA bank give a giftbox for new customers\nwho create account',
                         style: primaryTextStyle(),
                       ),
                       Image.asset(mList1[index].icon, height: 150, width: 150, fit: BoxFit.cover),

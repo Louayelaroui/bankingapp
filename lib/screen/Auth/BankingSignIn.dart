@@ -6,6 +6,7 @@ import 'package:nb_utils/nb_utils.dart';
 import '../../const/BankingColors.dart';
 import '../../const/BankingImages.dart';
 import '../../const/BankingStrings.dart';
+import '../../services/db_services.dart';
 import '../../utils/BankingWidget.dart';
 import '../BankingDashboard.dart';
 import 'BankingForgotPassword.dart';
@@ -20,6 +21,8 @@ class BankingSignIn extends StatefulWidget {
 }
 
 class _BankingSignInState extends State<BankingSignIn> {
+  final TextEditingController phoneController = TextEditingController();
+  final TextEditingController passwordController = TextEditingController();
   @override
   void initState() {
     super.initState();
@@ -48,9 +51,9 @@ class _BankingSignInState extends State<BankingSignIn> {
                 children: [
                   Text(Banking_lbl_SignIn, style: boldTextStyle(size: 30)),
                   16.height,
-                  EditText(text: "Phone", isPassword: false),
+                  EditText(text: "Phone", isPassword: false,mController:phoneController ,),
                   8.height,
-                  EditText(text: "Password", isPassword: true, isSecure: true),
+                  EditText(text: "Password", isPassword: true, isSecure: true,mController: passwordController,),
                   16.height,
                   Align(
                     alignment: Alignment.centerRight,
@@ -63,9 +66,7 @@ class _BankingSignInState extends State<BankingSignIn> {
                   16.height,
                   BankingButton(
                     textContent: Banking_lbl_SignIn,
-                    onPressed: () {
-                      BankingDashboard().launch(context);
-                    },
+                    onPressed: _signIn,
                   ),
                   16.height,
                   Column(
@@ -100,4 +101,25 @@ class _BankingSignInState extends State<BankingSignIn> {
       ),
     );
   }
+  void _signIn() async {
+    String phone = phoneController.text;
+    String password = passwordController.text;
+
+    if (phone.isEmpty || password.isEmpty) {
+      toast('Please fill in all fields');
+      return;
+    }
+
+    bool isValid = await SQLHelper.checkCredentials(phone, password);
+    int? userId = await SQLHelper.getUserIdByPhone(phone);
+
+    if (isValid) {
+      SharedPreferences prefs = await SharedPreferences.getInstance();
+      await prefs.setInt('userID', userId!);
+      BankingDashboard().launch(context);
+    } else {
+      toast('Wrong phone number or password');
+    }
+  }
 }
+

@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:nb_utils/nb_utils.dart';
 
-import '../const/BankingColors.dart';
-import '../const/BankingImages.dart';
-import '../const/BankingStrings.dart';
+import '../../const/BankingColors.dart';
+import '../../const/BankingImages.dart';
+import '../../const/BankingStrings.dart';
 
 
 class BankingContact extends StatefulWidget {
@@ -53,7 +53,7 @@ class _BankingContactState extends State<BankingContact> {
                       children: [
                         Image.asset(Banking_ic_Pin, height: 20, width: 20, color: Banking_palColor),
                         15.width,
-                        Text("722 Canyon Street Plainfield", style: primaryTextStyle(color: Banking_TextColorSecondary)),
+                        Text("Tunisia", style: primaryTextStyle(color: Banking_TextColorSecondary)),
                       ],
                     ),
                     15.height,
@@ -61,7 +61,7 @@ class _BankingContactState extends State<BankingContact> {
                       children: [
                         Image.asset(Banking_ic_Call, height: 20, width: 20, color: Banking_RedColor),
                         15.width,
-                        Text("+1-202-555-0123", style: primaryTextStyle(color: Banking_TextColorSecondary)),
+                        Text("+21670116216", style: primaryTextStyle(color: Banking_TextColorSecondary)),
                       ],
                     ),
                     15.height,
@@ -96,7 +96,7 @@ class _BankingContactState extends State<BankingContact> {
                       children: [
                         Image.asset(Banking_ic_Pin, height: 20, width: 20, color: Banking_palColor),
                         15.width,
-                        Text("722 Canyon Street Plainfield", style: primaryTextStyle(color: Banking_TextColorSecondary)),
+                        Text("Tunsia ,Sousse", style: primaryTextStyle(color: Banking_TextColorSecondary)),
                       ],
                     ),
                     15.height,
@@ -104,7 +104,7 @@ class _BankingContactState extends State<BankingContact> {
                       children: [
                         Image.asset(Banking_ic_Call, height: 20, width: 20, color: Banking_RedColor),
                         15.width,
-                        Text("+1-202-555-0123", style: primaryTextStyle(color: Banking_TextColorSecondary)),
+                        Text("+21670116216", style: primaryTextStyle(color: Banking_TextColorSecondary)),
                       ],
                     ),
                     15.height,

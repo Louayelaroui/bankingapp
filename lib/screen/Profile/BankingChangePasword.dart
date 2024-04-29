@@ -2,9 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:nb_utils/nb_utils.dart';
 
 
-import '../const/BankingColors.dart';
-import '../const/BankingStrings.dart';
-import '../utils/BankingWidget.dart';
+import '../../const/BankingColors.dart';
+import '../../const/BankingStrings.dart';
+import '../../services/db_services.dart';
+import '../../utils/BankingWidget.dart';
+import 'BankingMenu.dart';
 
 class BankingChangePassword extends StatefulWidget {
   static var tag = "/BankingChangePassword";
@@ -14,6 +16,9 @@ class BankingChangePassword extends StatefulWidget {
 }
 
 class _BankingChangePasswordState extends State<BankingChangePassword> {
+  final TextEditingController oldPasswordController = TextEditingController();
+  final TextEditingController newPasswordController = TextEditingController();
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -48,17 +53,14 @@ class _BankingChangePasswordState extends State<BankingChangePassword> {
                     ],
                   ),
                   20.height,
-                  EditText(text: "Old Password", isPassword: true, isSecure: true),
+                  EditText(text: "Old Password", isPassword: true, isSecure: true,mController:oldPasswordController ,),
                   16.height,
-                  EditText(text: "New Password", isPassword: true, isSecure: true),
+                  EditText(text: "New Password", isPassword: true, isSecure: true,mController:newPasswordController ,),
                   16.height,
                   40.height,
                   BankingButton(
                     textContent: Banking_lbl_Confirm,
-                    onPressed: () {
-                      toasty(context, 'Password Successfully Changed');
-                      finish(context);
-                    },
+                    onPressed: _changePassword,
                   ),
                 ],
               ),
@@ -68,4 +70,22 @@ class _BankingChangePasswordState extends State<BankingChangePassword> {
       ),
     );
   }
+  void _changePassword() async {
+    SharedPreferences prefs = await SharedPreferences.getInstance();
+    int? userId = prefs.getInt('userID');
+    bool success = await SQLHelper.updatePassword(
+        userId!,
+        oldPasswordController.text,
+        newPasswordController.text
+    );
+
+    if (success) {
+
+      toasty(context, 'Password successfully updated');
+      BankingMenu().launch(context);
+    } else {
+      toasty(context, 'Failed to update password. Please check your old password.');
+    }
+  }
+
 }

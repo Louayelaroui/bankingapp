@@ -9,15 +9,63 @@ class SQLHelper {
   static Future<void> createTables(Database database) async {
     await database.execute(
         """
-    CREATE TABLE items(
+    CREATE TABLE User(
       id INTEGER PRIMARY KEY AUTOINCREMENT, 
-      title TEXT,
-      description TEXT, 
+      username TEXT,
+      CIN INTEGER,
+      Phone INTEGER,
+      email TEXT,
+      Password TEXT,
       createdAt TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP
     )
     """);
   }
+  static Future<bool> checkCredentials(String phone, String password) async {
+    final db = await SQLHelper.db();
+    final res = await db.query(
+      'User',
+      where: "Phone = ? AND Password = ?",
+      whereArgs: [phone, password],
+    );
+    return res.isNotEmpty;
+  }
 
+  static Future<int?> getUserIdByPhone(String phone) async {
+    final db = await SQLHelper.db();
+    final res = await db.query(
+        'User',
+        columns: ['id'], // Only retrieve the id
+        where: "Phone = ?",
+        whereArgs: [phone],
+        limit: 1
+    );
+
+    if (res.isNotEmpty) {
+      return res.first['id'] as int;
+    }
+    return null;
+  }
+  static Future<bool> updatePassword(int userId, String oldPassword, String newPassword) async {
+    final db = await SQLHelper.db();
+    var res = await db.query(
+      'User',
+      where: "id = ? AND Password = ?",
+      whereArgs: [userId, oldPassword],
+    );
+
+    if (res.isNotEmpty) {
+      int result = await db.update(
+          'User',
+          {'Password': newPassword},
+          where: "id = ?",
+          whereArgs: [userId]
+      );
+      return result > 0;
+    } else {
+
+      return false;
+    }
+  }
   static Future<Database> db() async{
     var databasepath= await getDatabasesPath();
     String path = join(databasepath,'demo.db');
@@ -27,38 +75,41 @@ class SQLHelper {
 
 
   }
-  static Future<int>  createItem(String title ,String? desciption) async {
+  static Future<int>  createUser(String username ,int? Phone,String email,String Password,int?  CIN ) async {
     final db= await SQLHelper.db();
-    final data = {"title":title ,"description": desciption};
-    final id = await db.insert('items', data,conflictAlgorithm: ConflictAlgorithm.replace);
+    final data = {"username":username ,"Phone": Phone,"email": email ,"Password":Password ,"CIN":CIN};
+    final id = await db.insert('User', data,conflictAlgorithm: ConflictAlgorithm.replace);
     return id ;
 
   }
-  static Future<List<Map<String,dynamic>>> getItems()async{
+  static Future<List<Map<String,dynamic>>> getUsers()async{
     final db =await SQLHelper.db();
-    return db.query('items',orderBy: "id");
+    return db.query('User',orderBy: "id");
 
   }
-  static Future<List<Map<String,dynamic>>> getItem(int id)async{
+  static Future<List<Map<String,dynamic>>> getUserById(int id)async{
     final db =await SQLHelper.db();
-    return db.query('items',where: "id = ?",whereArgs: [id],limit: 1);
+    return db.query('User',where: "id = ?",whereArgs: [id],limit: 1);
 
   }
-  static Future<int> updateItem(int id , String title , String? description) async {
+  static Future<int> updateUser(int id , String username , int? Phone,String email ,String Password,int CIN) async {
     final db = await SQLHelper.db();
     final data = {
-      'title' : title ,
-      'description' : description ,
+      'username' : username ,
+      'Phone' : Phone ,
+      'CIN' : CIN ,
+      'email':email,
+      "Password":Password,
       'createdAt' : DateTime.now().toString()
     };
 
-    final result = await db.update('items', data,where: "id = ?", whereArgs: [id]);
+    final result = await db.update('User', data,where: "id = ?", whereArgs: [id]);
     return result ;
   }
 
-  static Future<void> deleteitem(int id ) async {
+  static Future<void> deleteUser(int id ) async {
     final db = await SQLHelper.db();
-    try {await db.delete("items", where: "id = ? ", whereArgs: [id]);} catch (err) {
+    try {await db.delete("User", where: "id = ? ", whereArgs: [id]);} catch (err) {
       debugPrint("Something went wrong when deleting ");
     }
   }

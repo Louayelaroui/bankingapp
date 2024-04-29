@@ -117,7 +117,7 @@ class _BankingTransferState extends State<BankingTransfer> {
                       Text("Choose Beneficiery", style: primaryTextStyle(color: Banking_TextColorSecondary)),
                       Row(
                         children: [
-                          Text("John Smith", style: primaryTextStyle()),
+                          Text("Louay elaroui", style: primaryTextStyle()),
                           Icon(Icons.keyboard_arrow_right, size: 30, color: Banking_greyColor),
                         ],
                       ),

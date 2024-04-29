@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:nb_utils/nb_utils.dart';
 
-import '../model/BankingModel.dart';
-import '../const/BankingColors.dart';
-import '../utils/BankingDataGenerator.dart';
-import '../const/BankingImages.dart';
-import '../const/BankingStrings.dart';
+import '../../model/BankingModel.dart';
+import '../../const/BankingColors.dart';
+import '../../utils/BankingDataGenerator.dart';
+import '../../const/BankingImages.dart';
+import '../../const/BankingStrings.dart';
 
 
 class BankingQuestionAnswer extends StatefulWidget {
