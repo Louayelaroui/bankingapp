@@ -51,3 +51,6 @@ const Banking_ic_Saving = "images/banking/Banking_ic_Saving.svg";
 const Banking_ic_Paypal = "images/banking/Banking_ic_paypal.png";
 const Banking_ic_MasterCard = "images/banking/Banking_ic_MasterCard.png";
 const Banking_ic_Wallet = "images/banking/Banking_ic_Wallet.png";
+const Banking_ic_Signin = "images/banking/banking_ic_Signin.svg";
+const Banking_ic_Signup = "images/banking/banking_ic_SignUp.svg";
+

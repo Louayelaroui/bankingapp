@@ -2,10 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:nb_utils/nb_utils.dart';
 
 import '../model/BankingModel.dart';
-import '../utils/BankingColors.dart';
+import '../const/BankingColors.dart';
 import '../utils/BankingDataGenerator.dart';
-import '../utils/BankingImages.dart';
-import '../utils/BankingStrings.dart';
+import '../const/BankingImages.dart';
+import '../const/BankingStrings.dart';
 import '../utils/BankingWidget.dart';
 
 
@@ -110,7 +110,7 @@ class _BankingLocationState extends State<BankingLocation> {
                         children: [
                           Image.asset(Banking_ic_Pin, height: 30, color: Banking_palColor),
                           15.width,
-                          Text('722 canyon Street Plainfield', style: primaryTextStyle()),
+                          Text('Sousse', style: primaryTextStyle()),
                         ],
                       ),
                       Divider(height: 35),

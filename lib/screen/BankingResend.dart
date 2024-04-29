@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:nb_utils/nb_utils.dart';
 
-import '../utils/BankingColors.dart';
-import '../utils/BankingContants.dart';
-import '../utils/BankingStrings.dart';
+import '../const/BankingColors.dart';
+import '../const/BankingContants.dart';
+import '../const/BankingStrings.dart';
 import '../utils/BankingWidget.dart';
-import 'BankingForgotPwd.dart';
+import 'Auth/BankingForgotPwd.dart';
 
 
 class BankingResend extends StatefulWidget {

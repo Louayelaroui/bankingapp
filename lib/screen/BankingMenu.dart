@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:nb_utils/nb_utils.dart';
 
-import '../utils/BankingColors.dart';
-import '../utils/BankingContants.dart';
-import '../utils/BankingImages.dart';
-import '../utils/BankingStrings.dart';
+import '../const/BankingColors.dart';
+import '../const/BankingContants.dart';
+import '../const/BankingImages.dart';
+import '../const/BankingStrings.dart';
 import '../utils/BankingWidget.dart';
 import 'BankingChangePasword.dart';
 import 'BankingContact.dart';
@@ -52,7 +52,7 @@ class _BankingMenuState extends State<BankingMenu> {
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: <Widget>[
                         5.height,
-                        Text("Laura Smith", style: boldTextStyle(size: 18)),
+                        Text("Louay Elaroui", style: boldTextStyle(size: 18)),
                         5.height,
                         Text("123 456 789", style: primaryTextStyle(color: Banking_TextColorSecondary)),
                         5.height,

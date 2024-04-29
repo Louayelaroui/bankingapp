@@ -1,8 +1,8 @@
 
 
 import '../model/BankingModel.dart';
-import 'BankingColors.dart';
-import 'BankingImages.dart';
+import '../const/BankingColors.dart';
+import '../const/BankingImages.dart';
 
 List<BankingShareInfoModel> bankingInfoList() {
   List<BankingShareInfoModel> list = [];
@@ -46,19 +46,19 @@ List<BankingQuesAnsModel> bankingQuestionList() {
   var list1 = BankingQuesAnsModel("Question: What is App Contain?");
   list.add(list1);
 
-  var list2 = BankingQuesAnsModel("Money return when you go shopping with credit card of Cy Captial Bank ?");
+  var list2 = BankingQuesAnsModel("Money return when you go shopping with credit card of Elbaraka Bank ?");
   list.add(list2);
 
   var list3 = BankingQuesAnsModel("Each payment process is so simple and hassle - free ?");
   list.add(list3);
 
-  var list4 = BankingQuesAnsModel("Cy Captial Bank give a giftbox for new customers who create account ?");
+  var list4 = BankingQuesAnsModel("Elbaraka Bank give a giftbox for new customers who create account ?");
   list.add(list4);
 
   var list5 = BankingQuesAnsModel("Each payment process is so simple and hassle - free ?");
   list.add(list5);
 
-  var list6 = BankingQuesAnsModel("Money return when you go shopping with credit card of Cy Captial Bank ?");
+  var list6 = BankingQuesAnsModel("Money return when you go shopping with credit card of Elbaraka Bank ?");
   list.add(list6);
 
   return list;
@@ -129,13 +129,13 @@ List<BankingPaymentModel> bankingPaymentDetailList() {
 
 List<BankingCardModel> bankingCardList() {
   List<BankingCardModel> list = [];
-  var list1 = BankingCardModel(name: "Laura Smith", bank: "The Same Bank", rs: "12,500");
+  var list1 = BankingCardModel(name: "Louay elaroui", bank: "ELBARAKA BANK", rs: "12,500");
   list.add(list1);
 
-  var list2 = BankingCardModel(name: "Adam Johnson", bank: "Union Bank", rs: "18,000");
+  var list2 = BankingCardModel(name: "Yamina ghobni", bank: "ATB Bank", rs: "18,000");
   list.add(list2);
 
-  var list3 = BankingCardModel(name: "Ana Willson", bank: "Unitied States Bank", rs: "50,000");
+  var list3 = BankingCardModel(name: "CWD", bank: "BH Bank", rs: "50,000");
   list.add(list3);
 
   return list;
@@ -188,7 +188,7 @@ List<BankingHomeModel> bankingHomeList1() {
   var list1 = BankingHomeModel(title: "Default Account", color: Banking_BalanceColor, bal: "+\$50 USD");
   list.add(list1);
 
-  var list2 = BankingHomeModel(title: "Adam Johnson", color: Banking_Primary, bal: "-\$20 USD");
+  var list2 = BankingHomeModel(title: "Louay elaroui", color: Banking_Primary, bal: "-\$20 USD");
   list.add(list2);
 
   return list;

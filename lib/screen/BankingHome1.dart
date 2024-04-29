@@ -5,10 +5,10 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:nb_utils/nb_utils.dart';
 
 import '../model/BankingModel.dart';
-import '../utils/BankingColors.dart';
-import '../utils/BankingContants.dart';
+import '../const/BankingColors.dart';
+import '../const/BankingContants.dart';
 import '../utils/BankingDataGenerator.dart';
-import '../utils/BankingImages.dart';
+import '../const/BankingImages.dart';
 import '../utils/BankingWidget.dart';
 
 class BankingHome1 extends StatefulWidget {
@@ -60,7 +60,7 @@ class BankingHome1State extends State<BankingHome1> {
                       mainAxisAlignment: MainAxisAlignment.start,
                       children: [
                         Text(
-                          "Hello,Laura",
+                          "Hello,Louay",
                           style: primaryTextStyle(color: Banking_TextColorWhite),
                         ),
                         Text(
@@ -101,8 +101,8 @@ class BankingHome1State extends State<BankingHome1> {
                             child: PageView(
                               children: [
                                 TopCard(name: "Default Account", acno: "1234567899", bal: "\$12,500"),
-                                TopCard(name: "Adam Johnson", acno: "9874563210", bal: "\$18,000"),
-                                TopCard(name: "Ana Willson", acno: "5821479630", bal: "\$12,500"),
+                                TopCard(name: "louay elaroui", acno: "9874563210", bal: "\$18,000"),
+                                TopCard(name: "Yamina Ghobni", acno: "5821479630", bal: "\$12,500"),
                               ],
                               onPageChanged: (value) {
                                 setState(() => currentIndexPage = value);

@@ -3,9 +3,9 @@ import 'package:nb_utils/nb_utils.dart';
 
 
 import '../model/BankingModel.dart';
-import '../utils/BankingColors.dart';
-import '../utils/BankingContants.dart';
-import '../utils/BankingStrings.dart';
+import '../const/BankingColors.dart';
+import '../const/BankingContants.dart';
+import '../const/BankingStrings.dart';
 import '../utils/BankingWidget.dart';
 import 'BankingInvoiceDetail.dart';
 
@@ -38,7 +38,7 @@ class _BankingPaymentInvoiceState extends State<BankingPaymentInvoice> {
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: <Widget>[
                     Text("Name", style: primaryTextStyle(color: Banking_TextColorSecondary)),
-                    Text("John Smith", style: primaryTextStyle()),
+                    Text("Louay elaroui", style: primaryTextStyle()),
                   ],
                 ).paddingSymmetric(horizontal: spacing_standard_new, vertical: spacing_standard),
                 Divider().paddingOnly(left: spacing_standard, right: spacing_standard)
@@ -50,7 +50,7 @@ class _BankingPaymentInvoiceState extends State<BankingPaymentInvoice> {
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: <Widget>[
                     Text("Address", style: primaryTextStyle(color: Banking_TextColorSecondary)),
-                    Text("874 Cameron Road,NY,US", style: primaryTextStyle()),
+                    Text("Sousse, tunisie", style: primaryTextStyle()),
                   ],
                 ).paddingSymmetric(horizontal: spacing_standard_new, vertical: spacing_standard),
                 Divider().paddingOnly(left: spacing_standard, right: spacing_standard)

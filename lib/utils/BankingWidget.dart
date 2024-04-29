@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:nb_utils/nb_utils.dart';
 
-import 'BankingColors.dart';
-import 'BankingContants.dart';
+import '../const/BankingColors.dart';
+import '../const/BankingContants.dart';
 
 
 // ignore: must_be_immutable

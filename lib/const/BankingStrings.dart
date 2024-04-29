@@ -1,4 +1,4 @@
-const Banking_lbl_app_Name = "Cy Capital Bank";
+const Banking_lbl_app_Name = "Al baraka";
 const Banking_lbl_app_Sub_title = "Mobile Banking Apps";
 const Banking_lbl_Walk1Title = "Online Payment";
 const Banking_lbl_Walk2Title = "Quickly Tranfer";
@@ -8,6 +8,7 @@ const Banking_lbl_Get_Started = "Get Started";
 const Banking_lbl_SignIn = "Sign In";
 const Banking_lbl_Forgot = "Forgot?";
 const Banking_lbl_Login_with_FaceID = "Or Login With Face ID";
+const Banking_lbl_Signup_now_="Sign Up Now !";
 const Banking_lbl_Resend = "Resend?";
 const Banking_lbl_Next = "Next";
 const Banking_lbl_Home = "Home";

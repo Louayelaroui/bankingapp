@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:nb_utils/nb_utils.dart';
 
-import '../utils/BankingColors.dart';
-import '../utils/BankingContants.dart';
+import '../const/BankingColors.dart';
+import '../const/BankingContants.dart';
 import '../utils/BankingSlider.dart';
-import '../utils/BankingStrings.dart';
+import '../const/BankingStrings.dart';
 import '../utils/BankingWidget.dart';
 
 
@@ -42,7 +42,7 @@ class _BankingInvoiceDetailState extends State<BankingInvoiceDetail> {
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     Text("Name", style: primaryTextStyle(color: Banking_TextColorSecondary)),
-                    Text("John Smith", style: primaryTextStyle()),
+                    Text("Louay Elaroui", style: primaryTextStyle()),
                   ],
                 ).paddingSymmetric(horizontal: spacing_standard_new, vertical: spacing_standard),
                 Divider().paddingOnly(left: spacing_standard, right: spacing_standard)
@@ -55,7 +55,7 @@ class _BankingInvoiceDetailState extends State<BankingInvoiceDetail> {
                   children: [
                     Text("Address", style: primaryTextStyle(color: Banking_TextColorSecondary)),
                     Text(
-                      "874 Cameron Road,NY,US",
+                      "Sousse,Tunsie",
                       style: primaryTextStyle(),
                     ).paddingOnly(right: spacing_standard_new, top: spacing_standard_new),
                   ],

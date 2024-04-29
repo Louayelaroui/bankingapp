@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 
 import '../utils/BankingBottomNavigationBar.dart';
-import '../utils/BankingColors.dart';
-import '../utils/BankingImages.dart';
-import '../utils/BankingStrings.dart';
+import '../const/BankingColors.dart';
+import '../const/BankingImages.dart';
+import '../const/BankingStrings.dart';
 import 'BankingHome1.dart';
 import 'BankingMenu.dart';
 import 'BankingPayment.dart';

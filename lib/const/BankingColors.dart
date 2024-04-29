@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-const Banking_Primary = Color(0xFFff9a8d);
+const Banking_Primary = Color(0xFF29519B);
 const Banking_Secondary = Color(0xFF4a536b);
 const Banking_ColorPrimaryDark = Color(0xFFFFF);
 

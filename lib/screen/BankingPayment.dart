@@ -2,10 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:nb_utils/nb_utils.dart';
 
 import '../model/BankingModel.dart';
-import '../utils/BankingColors.dart';
-import '../utils/BankingContants.dart';
+import '../const/BankingColors.dart';
+import '../const/BankingContants.dart';
 import '../utils/BankingDataGenerator.dart';
-import '../utils/BankingStrings.dart';
+import '../const/BankingStrings.dart';
 import 'BankingPaymentDetails.dart';
 
 class BankingPayment extends StatefulWidget {

@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:nb_utils/nb_utils.dart';
 
-import '../utils/BankingColors.dart';
-import '../utils/BankingImages.dart';
-import '../utils/BankingStrings.dart';
+import '../const/BankingColors.dart';
+import '../const/BankingImages.dart';
+import '../const/BankingStrings.dart';
 
 
 class BankingContact extends StatefulWidget {
@@ -69,7 +69,7 @@ class _BankingContactState extends State<BankingContact> {
                       children: [
                         Image.asset(Banking_ic_Website, height: 20, width: 20, color: Banking_pinkLightColor),
                         15.width,
-                        Text("www.cycaptialbank.com", style: primaryTextStyle(color: Banking_TextColorSecondary)),
+                        Text("www.celestialwavedigital.com", style: primaryTextStyle(color: Banking_TextColorSecondary)),
                       ],
                     ),
                     15.height,
@@ -112,7 +112,7 @@ class _BankingContactState extends State<BankingContact> {
                       children: [
                         Image.asset(Banking_ic_Website, height: 20, width: 20, color: Banking_pinkLightColor),
                         15.width,
-                        Text("www.cycaptialbank.com", style: primaryTextStyle(color: Banking_TextColorSecondary)),
+                        Text("www.celestialwavedigital.com", style: primaryTextStyle(color: Banking_TextColorSecondary)),
                       ],
                     ),
                     15.height,

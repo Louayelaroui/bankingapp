@@ -4,11 +4,11 @@ import 'package:nb_utils/nb_utils.dart';
 
 
 import '../model/BankingModel.dart';
-import 'BankingColors.dart';
-import 'BankingContants.dart';
+import '../const/BankingColors.dart';
+import '../const/BankingContants.dart';
 import 'BankingDataGenerator.dart';
-import 'BankingImages.dart';
-import 'BankingStrings.dart';
+import '../const/BankingImages.dart';
+import '../const/BankingStrings.dart';
 
 class BankingSliderWidget extends StatefulWidget {
   static String tag = '/BankingSlider';
@@ -20,13 +20,31 @@ class BankingSliderWidget extends StatefulWidget {
 class BankingSliderWidgetState extends State<BankingSliderWidget> {
   var currentIndexPage = 0;
   late List<BankingCardModel> mList;
+  late ScrollController _controller;
 
   @override
   void initState() {
     super.initState();
     mList = bankingCardList();
+    _controller = ScrollController();
+    _controller.addListener(_scrollListener);
   }
+  @override
+  void dispose() {
+    _controller.removeListener(_scrollListener);
+    _controller.dispose();
+    super.dispose();
+  }
+  void _scrollListener() {
+    double itemWidth = MediaQuery.of(context).size.width * 0.7;
+    int newIndex = (_controller.offset / itemWidth).round();
 
+    if (newIndex != currentIndexPage) {
+      setState(() {
+        currentIndexPage = newIndex;
+      });
+    }
+  }
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -34,6 +52,7 @@ class BankingSliderWidgetState extends State<BankingSliderWidget> {
         Container(
           height: 200,
           child: ListView.builder(
+            controller: _controller,
             scrollDirection: Axis.horizontal,
             itemCount: mList.length,
             shrinkWrap: true,
@@ -43,7 +62,9 @@ class BankingSliderWidgetState extends State<BankingSliderWidget> {
                 width: context.width() * 0.7,
                 child: Stack(
                   children: [
-                    Container(height: 200, width: context.width(), child: Image.asset(Banking_ic_CardImage, fit: BoxFit.fill)),
+                    Container(height: 200, width: context.width(), child:
+
+                    Image.asset(Banking_ic_CardImage, fit: BoxFit.fill)),
                     Container(
                       padding: EdgeInsets.only(left: 16, right: 8),
                       child: Column(
@@ -53,15 +74,23 @@ class BankingSliderWidgetState extends State<BankingSliderWidget> {
                           Row(
                             children: [
                               Text(mList[currentIndexPage].name.validate(), style: primaryTextStyle(color: Banking_whitePureColor, size: 18, fontFamily: fontMedium)).expand(),
-                              Text(Banking_lbl_app_Name, style: primaryTextStyle(color: Banking_whitePureColor, size: 16, fontFamily: fontMedium))
+                              Padding(
+                                padding: const EdgeInsets.all(14.0),
+                                child: Text(mList[currentIndexPage].bank.validate(), style: primaryTextStyle(color: Banking_whitePureColor, size: 10, fontFamily: fontMedium)),
+                              )
                             ],
                           ),
                           24.height,
-                          Text(mList[currentIndexPage].bank.validate(), style: primaryTextStyle(color: Banking_whitePureColor, size: 18, fontFamily: fontMedium)),
-                          4.height,
-                          Text('1121 *** ** *** 5555', style: primaryTextStyle(color: Banking_whitePureColor, size: 18, fontFamily: fontMedium)),
-                          8.height,
-                          Text("\$" + mList[currentIndexPage].rs.validate(), style: primaryTextStyle(color: Banking_whitePureColor, size: 18, fontFamily: fontMedium)),
+
+                          Padding(
+                            padding: const EdgeInsets.only(left: 8.0),
+                            child: Text('1121 *** ** *** 5555', style: primaryTextStyle(color: Banking_whitePureColor, size: 18, fontFamily: fontMedium)),
+                          ),
+                          16.height,
+                          Padding(
+                            padding: const EdgeInsets.only(left: 32.0,),
+                            child: Text("\$" + mList[currentIndexPage].rs.validate(), style: primaryTextStyle(color: Banking_whitePureColor, size: 18, fontFamily: fontMedium)),
+                          ),
                         ],
                       ),
                     ),

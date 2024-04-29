@@ -258,9 +258,6 @@ class _BankingCarouselSliderState extends State<BankingCarouselSlider> with Tick
           animation: widget.pageController,
           child: (widget.items != null) ? widget.items![index] : widget.itemBuilder!(context, index),
           builder: (BuildContext context, child) {
-            // on the first render, the pageController.page is null,
-            // this is a dirty hack
-            // ignore: unnecessary_null_comparison
             if (widget.pageController.position.minScrollExtent == null) {
               Future.delayed(Duration(microseconds: 1), () {
                 if (this.mounted) {

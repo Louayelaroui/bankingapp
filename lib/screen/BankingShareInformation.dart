@@ -2,11 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:nb_utils/nb_utils.dart';
 
 import '../model/BankingModel.dart';
-import '../utils/BankingColors.dart';
-import '../utils/BankingContants.dart';
+import '../const/BankingColors.dart';
+import '../const/BankingContants.dart';
 import '../utils/BankingDataGenerator.dart';
-import '../utils/BankingImages.dart';
-import '../utils/BankingStrings.dart';
+import '../const/BankingImages.dart';
+import '../const/BankingStrings.dart';
 
 
 class BankingShareInformation extends StatefulWidget {
@@ -56,7 +56,7 @@ class _BankingShareInformationState extends State<BankingShareInformation> {
                 children: <Widget>[
                   CircleAvatar(backgroundImage: AssetImage(Banking_ic_user2), radius: 25),
                   10.width,
-                  Text("Laura Smith", style: boldTextStyle(size: 18)).center(),
+                  Text("Louay elaroui", style: boldTextStyle(size: 18)).center(),
                 ],
               ),
               20.height,
